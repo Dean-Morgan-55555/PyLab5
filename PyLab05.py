@@ -100,6 +100,9 @@ while not done:
     usrInput = usrInput.lower()
     if  usrInput == 'y':
         print("Sounds good. Hold onto your swallows.\n\n")
+    else:
+        print("Okay fine. Ignore the mysteries of swallowness")
+        done = True
 
     done = True
 
