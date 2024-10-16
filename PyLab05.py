@@ -65,7 +65,8 @@ def carry_weight(sw_type, num):
 # - returns: fraction of coconuts that can be carried
 # ###########################################################
 def num_coconuts(weight, avg_coconut):
-    return 0
+    coconut_percent = weight/avg_coconut
+    return coconut_percent
 
 
 
@@ -84,7 +85,7 @@ def num_swallows(sw_type, avg_coconut):
 # ###########################################################
 # main code while loop
 # ###########################################################
-sw_type, sw_num = get_swallows()
-
+#sw_type, sw_num = get_swallows()
+print(num_coconuts(1, 1))
 
 
