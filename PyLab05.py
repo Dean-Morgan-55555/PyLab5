@@ -41,8 +41,7 @@ def get_swallows():
     type_list = ["african", "cliff", "european", "fanti", "mosque", "tree", "welome"]
     sw_type = input("Enter a swallow type: ").lower()
     while not sw_type in type_list:
-        print("Unknown type \'{}\'. Enter a different type: ".format(sw_type))
-        sw_type = input("enter type of swallow: ").lower()
+        sw_type = input("\tUnknown type \'{}\'. Enter a different type: ".format(sw_type).lower())
     sw_num = inputValid.inputValidationToIntMin(input("Enter number of {} swallows: ".format(sw_type)), 1)
     return sw_type, sw_num
 
@@ -85,7 +84,17 @@ def num_swallows(sw_type, avg_coconut):
 # ###########################################################
 # main code while loop
 # ###########################################################
+print("Swallow Payoad Calculator")
+print("-"*40)
+done = False
+while not done:
+    get_swallows()
+    done = True
+
+
+
+#tests
 #sw_type, sw_num = get_swallows()
-print(num_coconuts(1, 1))
+#print(num_coconuts(1, 0.5))
 
 
