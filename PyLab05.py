@@ -23,15 +23,28 @@
       
 """
 # Put any import statements here
+import inputValid
 
 #Dean Morgan
+#done and tested
 # ###########################################################
 # get_swallows() function header
 # - arguments: none
 # - returns: swallow type and swallow number
 # ###########################################################
 def get_swallows():
-    return 0
+    """
+    Gets input from the user for a type of swallow in the list bellow and a number of swallows.
+    ensures that the number of swallows is above 0
+    type_list = ["african", "cliff", "european", "fanti", "mosque", "tree", "welome"]
+    """
+    type_list = ["african", "cliff", "european", "fanti", "mosque", "tree", "welome"]
+    sw_type = input("Enter a swallow type: ").lower()
+    while not sw_type in type_list:
+        print("Unknown type \'{}\'. Enter a different type: ".format(sw_type))
+        sw_type = input("enter type of swallow: ").lower()
+    sw_num = inputValid.inputValidationToIntMin(input("Enter number of {} swallows: ".format(sw_type)), 1)
+    return sw_type, sw_num
 
 
 #Chris Bayer
@@ -71,7 +84,7 @@ def num_swallows(sw_type, avg_coconut):
 # ###########################################################
 # main code while loop
 # ###########################################################
-
+sw_type, sw_num = get_swallows()
 
 
 
