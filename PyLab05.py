@@ -85,10 +85,16 @@ def num_swallows(sw_type, avg_coconut):
 # main code while loop
 # ###########################################################
 print("Swallow Payoad Calculator")
-print("-"*40)
+print("-"*40, "\n")
 done = False
+coconut_weight = 1
 while not done:
-    get_swallows()
+    sw_type, sw_num = get_swallows()
+    print("\nResults for {} {} swallows \n".format(sw_num, sw_type))
+    sw_weight = carry_weight(sw_type, sw_num)
+    carry_percent = num_coconuts(sw_weight, coconut_weight)
+    print("{} {} swallows can carry {:.1f}g which is {:.3f} {}lb coconuts\n".format(sw_num, sw_type, sw_weight, carry_percent, coconut_weight))
+
     done = True
 
 
