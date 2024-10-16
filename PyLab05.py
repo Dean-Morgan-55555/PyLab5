@@ -30,7 +30,8 @@
 # - arguments: none
 # - returns: swallow type and swallow number
 # ###########################################################
-
+def get_swallows():
+    return 0
 
 
 #Chris Bayer
@@ -39,6 +40,8 @@
 # - parameters: swallow type and number
 # - returns: carry weight in grams
 # ###########################################################
+def carry_weight(sw_type, num):
+    return 0
 
 
 
@@ -48,6 +51,8 @@
 # - parameters: carry load, weight of 1 coconut in grams
 # - returns: fraction of coconuts that can be carried
 # ###########################################################
+def num_coconuts(weight, avg_coconut):
+    return 0
 
 
 
@@ -57,6 +62,8 @@
 # - parameters: type of swallow and weight of 1 coconut in grams
 # - returns: the number of swallows needed
 # ###########################################################
+def num_swallows(sw_type, avg_coconut):
+    return 0
 
 
 
