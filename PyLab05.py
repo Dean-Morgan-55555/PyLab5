@@ -94,6 +94,12 @@ while not done:
     sw_weight = carry_weight(sw_type, sw_num)
     carry_percent = num_coconuts(sw_weight, coconut_weight)
     print("{} {} swallows can carry {:.1f}g which is {:.3f} {}lb coconuts\n".format(sw_num, sw_type, sw_weight, carry_percent, coconut_weight))
+    carry_swallow = num_swallows(sw_type, coconut_weight)
+    print("to carry a {}lb coconut you will need {} {} swallows\n".format(coconut_weight, carry_swallow, sw_type))
+    usrInput = input("Would you like to try another swallow (y/n)? ")
+    usrInput = usrInput.lower()
+    if  usrInput == 'y':
+        print("Sounds good. Hold onto your swallows.\n\n")
 
     done = True
 
