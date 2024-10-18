@@ -40,6 +40,8 @@ def get_swallows():
     """
     type_list = ["african", "cliff", "european", "fanti", "mosque", "tree", "welome"]
     sw_type = input("Enter a swallow type: ").lower()
+    #input validation for the input that the user gives
+    #checks the type of swallow ageinst the list, then gets the number of swalllows and uses another function to validate the number
     while not sw_type in type_list:
         sw_type = input("\tUnknown type \'{}\'. Enter a different type: ".format(sw_type).lower())
     sw_num = inputValid.inputValidationToIntMin(input("Enter number of {} swallows: ".format(sw_type)), 1)
@@ -86,26 +88,36 @@ def num_swallows(sw_type, avg_coconut):
 # ###########################################################
 print("Swallow Payoad Calculator")
 print("-"*40, "\n")
+
+#variables used later
 done = False
 coconut_weight = 1
+
+#main loop
 while not done:
+    #gets the type and number of swallows, then validates and prints the result
     sw_type, sw_num = get_swallows()
     print("\nResults for {} {} swallows \n".format(sw_num, sw_type))
+
+    #finds and prints the srats about how many coconuts the swallow can carry based on the weight of a coconut and how much the swallow can carry
     sw_weight = carry_weight(sw_type, sw_num)
     carry_percent = num_coconuts(sw_weight, coconut_weight)
     print("{} {} swallows can carry {:.1f}g which is {:.3f} {}lb coconuts\n".format(sw_num, sw_type, sw_weight, carry_percent, coconut_weight))
+
+    #finds and prints how many swallows you need to carry one coconut by how much one coocnut weighs and how much one swallow can carry
     carry_swallow = num_swallows(sw_type, coconut_weight)
     print("to carry a {}lb coconut you will need {} {} swallows\n".format(coconut_weight, carry_swallow, sw_type))
+
+    #prompts user to try again
     usrInput = input("Would you like to try another swallow (y/n)? ")
     usrInput = usrInput.lower()
     if  usrInput == 'y':
-        print("Sounds good. Hold onto your swallows.\n\n")
+        print(
+                "Sounds good. Hold onto your swallows.\n\n")
+    #ends loop
     else:
         print("Okay fine. Ignore the mysteries of swallowness")
         done = True
-
-    done = True
-
 
 
 #tests
