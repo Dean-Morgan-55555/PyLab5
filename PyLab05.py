@@ -23,7 +23,24 @@
       
 """
 # Put any import statements here
-import inputValid
+
+#Dean Morgan
+#done and tested
+# ###########################################################
+# inputValidationValidToIntMin() function header
+# - arguments: number to validate, minimum number
+# - returns: the validated number as an int
+# ###########################################################
+def inputValidationToIntMin(validate,minNum):
+    "number to validate, minimum number inclusive"
+    if type(validate) == str and type(minNum) == int:
+        validate = inputValidationToInt(validate)
+        while not(validate >= minNum):
+            validate = input("please enter a number greater than or equal to {}: ".format(minNum))
+            validate = inputValidationToInt(validate)
+        return validate
+    else:
+        raise Exception("Please input valid data types (String, int, int)")
 
 #Dean Morgan
 #done and tested
@@ -44,7 +61,7 @@ def get_swallows():
     #checks the type of swallow ageinst the list, then gets the number of swalllows and uses another function to validate the number
     while not sw_type in type_list:
         sw_type = input("\tUnknown type \'{}\'. Enter a different type: ".format(sw_type).lower())
-    sw_num = inputValid.inputValidationToIntMin(input("Enter number of {} swallows: ".format(sw_type)), 1)
+    sw_num = inputValidationToIntMin(input("Enter number of {} swallows: ".format(sw_type)), 1)
     return sw_type, sw_num
 
 
