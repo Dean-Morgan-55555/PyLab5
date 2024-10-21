@@ -24,6 +24,24 @@
 """
 # Put any import statements here
 
+
+#Dean Morgan
+#done and tested
+# ###########################################################
+# inputValidationValidToInt() function header
+# - arguments: number to validate
+# - returns: the validated number as an int
+# ###########################################################
+def inputValidationToInt(validate):
+    "number to validate"
+    if type(validate) == str:
+        while not validate.isdigit():
+            validate = input("Please enter a number: ")
+        return eval(validate)
+    else:
+        raise Exception("Please input a string")
+
+
 #Dean Morgan
 #done and tested
 # ###########################################################
