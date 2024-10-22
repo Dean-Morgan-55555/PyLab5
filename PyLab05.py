@@ -23,7 +23,7 @@
       
 """
 # Put any import statements here
-
+import math
 
 #Dean Morgan
 #done and tested
@@ -90,7 +90,28 @@ def get_swallows():
 # - returns: carry weight in grams
 # ###########################################################
 def carry_weight(sw_type, num):
-    return 0
+    """
+    Parameters
+    ----------
+    sw_type : TYPE
+        what type of swallow it is
+        "african", "cliff", "european", "fanti", "mosque", "tree", "welome"
+    num : TYPE
+        number of swallows
+
+    Returns
+    -------
+    int
+        total weight the swallows can carry
+    """
+    typeList = ["african", "cliff", "european", "fanti", "mosque", "tree", "welome"]
+    swallowWeightList = [48, 25, 20, 9, 58, 23, 15]
+    i = 0
+    while i <=6:
+        if sw_type == typeList[i]:
+            carryWeight = num * swallowWeightList[i] / 5
+        i = i+1    
+    return carryWeight
 
 
 
@@ -113,7 +134,8 @@ def num_coconuts(weight, avg_coconut):
 # - returns: the number of swallows needed
 # ###########################################################
 def num_swallows(sw_type, avg_coconut):
-    return 0
+    numSwallowsNeeded = math.ceil(avg_coconut / carry_weight(sw_type, 1) )
+    return numSwallowsNeeded
 
 
 
@@ -153,10 +175,4 @@ while not done:
     else:
         print("Okay fine. Ignore the mysteries of swallowness")
         done = True
-
-
-#tests
-#sw_type, sw_num = get_swallows()
-#print(num_coconuts(1, 0.5))
-
 
